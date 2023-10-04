@@ -1,10 +1,12 @@
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import { Configuration, OpenAIApi } from "openai-edge";
 
+export const runtime = "edge";
 const config = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API,
 });
 const openai = new OpenAIApi(config);
+console.log(`API Key: ${process.env.OPENAI_API}`);
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -15,4 +17,7 @@ export async function POST(req: Request) {
     messages,
     stream: true,
   });
+
+  const stream = OpenAIStream(response);
+  return new StreamingTextResponse(stream);
 }
