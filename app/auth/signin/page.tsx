@@ -26,10 +26,12 @@ const Signin = () => {
         <button onClick={handleLogin} className="btn btn-secondary w-1/2">
           Login
         </button>
-        <p className="text-black">Not yet Registered?</p>
-        <Link href="#" className="text-blue-700">
-          Register
-        </Link>
+        <div className="flex gap-2">
+          <p className="text-black">Not yet Registered?</p>
+          <Link href="/auth/register" className="text-blue-700">
+            Register
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -48,10 +48,12 @@ const Signin = () => {
         <button onClick={handleRegister} className="btn btn-secondary w-1/2">
           Login
         </button>
-        <p className="text-black">Already an User?</p>
-        <Link href="#" className="text-blue-700">
-          sign in
-        </Link>
+        <div className="flex flex-row gap-2">
+          <p className="text-black">Already an User?</p>
+          <Link href="/auth/signin" className="text-blue-700">
+            sign in
+          </Link>
+        </div>
       </div>
     </div>
   );
