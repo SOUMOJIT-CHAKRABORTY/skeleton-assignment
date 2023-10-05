@@ -6,7 +6,6 @@ const config = new Configuration({
   apiKey: process.env.OPENAI_API,
 });
 const openai = new OpenAIApi(config);
-console.log(`API Key: ${process.env.OPENAI_API}`);
 
 export async function POST(req: Request) {
   const body = await req.json();
